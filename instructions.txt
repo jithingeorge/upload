@@ -1,0 +1,28 @@
+Instructions for setting up Akamai API client env
+
+Note: Primary guide is here: https://developer.akamai.com/introduction/DnLoad_Sample.html
+
+1. Install Edgegrid for python: 
+	$ pip install edgegrid-python
+	
+2. Go to https://control.akamai.com/. Login with kavita.shenoy@startv.com/voiro1234
+	a) Click configure -> manage APIs
+	b) Client collection (cog dropdown) -> add new client. Give a damn name.
+	c) Click the new client. Go to authorizations. Click new authorization.
+	d) Give a name and select Media analytics API (read only) and diagnostic tools (read only, not required but kept it just in case)
+	e) Select kavita shenoy from dropdown.
+	f) Export credentials (top right arrow icon thingy)
+	
+3. In your home dir, create .edgerc file with the details from the downloaded file:
+
+[default]
+host = <Base URL>
+client_token = <Client token>
+client_secret = <Secret>
+access_token = <Access Token>
+max-body = 2048
+
+IMPORTANT: Leave out the https:// from the fucking base url. Akamai cunts didnt document.
+
+4. All set. You can run the script
+	
